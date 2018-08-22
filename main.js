@@ -1,8 +1,5 @@
 // INICIA O JOGO
-// Mostra unown
-for (var i = 0; i < 16; i++) {
-  document.getElementsByTagName('img')[i].src = 'img/x.png';
-}
+
 // Cria array de 8 números aleatórios
 var array1 = [];
 while (array1.length < 8) {
@@ -30,8 +27,9 @@ for (var i = 0; i < 16; i++) {
 // Pega tempo incial
 var tempoInicial = new Date().getTime();
 window.t1 = tempoInicial;
+// FIM INICIA JOGO
 
-
+// SISTEMA DE PROGRESSO
 var i = 0;
 var src = [];
 var index = [];
@@ -93,6 +91,8 @@ $('.socket').on('click', function(){ // Quando clica numa imagen
     }
   }
 });
+// FIM SISTEMA DE PROGRESSO
+
 
 // TIMER
 var segundos = 0;
