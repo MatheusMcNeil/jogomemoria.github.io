@@ -1,7 +1,3 @@
-div.container {
-  /* display: inline-grid; */
-}
-
 div.flex {
   display: flex;
   flex-direction: row;
@@ -11,15 +7,14 @@ div.flex {
 }
 
 div.socket {
+  cursor: pointer;
   background-color: black;
   height: 100px;
   width: 100px;
   margin: 10px;
 }
 
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}

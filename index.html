@@ -13,88 +13,132 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
   integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
   crossorigin="anonymous">
+  <!-- bootstrap  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
   <!-- custom css -->
   <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
 
-  <main>
+  <!-- <main> -->
 
     <div class="container">
 
-      <a href="http://google.com" onclick="javascript:void window.open('http://google.com','1534944537070','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Pop-up Window</a>
-
-      <button id="start" type="button" name="button" onclick="functionNewgame()">Novo jogo</button>
-
-      <p id="tempo">Tempo: 0 minutos e 0 segundos.</p>
-
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-
-      <div class="moves">
-
-      </div>
+    <h1>Jogo da memória</h1>
 
       <hr>
 
       <div class="flex">
 
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
         <div class="socket">
-          <img src="" alt="">
+          <img src="img/x.png" alt="">
         </div>
+
+      </div><!-- container-fluid -->
+
+      <hr>
+
+      <div class="menu">
+
+        <button class="btn btn-primary" id="start" type="button" name="button" onclick="functionNewgame()">Novo jogo</button>
+
+        <p class="" id="tempo">Tempo: 0 minutos e 0 segundos.</p>
+
+        <p id="movimentos">Movimentos: 0</p>
+
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+
 
       </div>
 
     </div>
 
-  </main>
+  <!-- </main> -->
+
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Parabéns</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-p"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="functionNewgame()">Novo jogo</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+  <!-- bootstrap  -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
 
 </body>
-<script src="js/main.js" charset="utf-8"></script>
+
 </html>

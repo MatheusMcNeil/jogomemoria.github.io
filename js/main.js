@@ -1,8 +1,5 @@
 // INICIA O JOGO
-// Mostra unown
-for (var i = 0; i < 16; i++) {
-  document.getElementsByTagName('img')[i].src = 'img/x.png';
-}
+
 // Cria array de 8 números aleatórios
 var array1 = [];
 while (array1.length < 8) {
@@ -30,8 +27,9 @@ for (var i = 0; i < 16; i++) {
 // Pega tempo incial
 var tempoInicial = new Date().getTime();
 window.t1 = tempoInicial;
+// FIM INICIA JOGO
 
-
+// SISTEMA DE PROGRESSO
 var i = 0;
 var src = [];
 var index = [];
@@ -39,60 +37,64 @@ var move_counter = 0;
 var game_progress = 0;
 var stars = 3;
 
-$('.socket').on('click', function(){ // Quando clica numa imagen
-  $(this).children().css('display', 'block');
-  console.log('click');
-  $(this).children().css('pointer-events', 'none');
-  index[i] = $(this).index();
+$('.socket').on('click', function(){ // Quando clica numa imagem
+
+  $(this).children().css('display', 'block'); // Mostra imagem
+  index[i] = $(this).index(); // Pega index do div clicado
   i++;
+
   if (i == 2) { // Quando se clica em duas imagens
     move_counter++;
-
-    if (move_counter == 8) {
+    $('#movimentos').text('Movimentos: ' + move_counter);
+    // Estrelas (pontuação)
+    if (move_counter == 9) {
       document.getElementsByClassName('fa-star')[2].style.display = "none";
+      stars--;
     }
-    if (move_counter == 16) {
+    if (move_counter == 17) {
       document.getElementsByClassName('fa-star')[1].style.display = "none";
+      stars--;
     }
 
-    var index1 = index.pop();
     var index0 = index.pop();
+    var index1 = index.pop();
 
-    var src1 = $('img')[index1].src;
     var src0 = $('img')[index0].src;
+    var src1 = $('img')[index1].src;
 
     if (src0 == src1) { // Se imagens iguais
       game_progress++;
       i = 0;
+      $('.socket').eq(index0).addClass('disabled');
+      $('.socket').eq(index1).addClass('disabled');
       if (game_progress == 8) { // Fim de jogo
         var t2 = new Date().getTime();
         var distance = t2 - t1;
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        if (minutes == 0) {
-          alert('Você fez ' + move_counter + ' jogadas para terminar o jogo em ' + seconds + ' segundos.');
-        }
-        else {
-          alert('Você fez ' + move_counter + ' jogadas para terminar o jogo em ' + minutes + ' minutos e ' + seconds + ' segundos.');
-        }
-        // console.log(minutes);
-        // console.log('Você terminou o jogo em ' + minutes + ' minutos e ' + seconds + ' segundos.');
-        // console.log('Você fez ' + move_counter + ' jogadas.');
+        $('.modal-p').text('Você fez ' + move_counter + ' jogadas para terminar o jogo em ' + seconds + ' segundos.');
+        $('#myModal').modal({backdrop: 'static', keyboard: false}); // Abre modal
+        console.log('GG');
       }
-      // console.log('gg');
     }
     else { // Se imagens diferentes
+      $('body').css('pointer-events', 'none');
       setTimeout(function() {
-        document.getElementsByTagName('img')[index1].style.display = 'none';
+        $('body').css('pointer-events', 'auto');
+
         document.getElementsByTagName('img')[index0].style.display = 'none';
-        $('img[index1]').css('pointer-events', 'auto');
-        $('img[index0]').css('pointer-events', 'auto');
+        document.getElementsByTagName('img')[index1].style.display = 'none';
+
+        $('.socket').eq(index0).removeClass('disabled');
+        $('.socket').eq(index1).removeClass('disabled');
       }, 1000);
       i = 0;
     }
   }
 });
+// FIM SISTEMA DE PROGRESSO
+
 
 // TIMER
 var segundos = 0;
@@ -103,10 +105,14 @@ setInterval(function functionSegundos() {
     segundos = 0;
     minutos++;
   }
-  document.getElementById('tempo').innerHTML = 'Tempo: ' + minutos + ' minutos e ' + segundos + ' segundos.';
+  document.getElementById('tempo').innerHTML = ('Tempo: ' + minutos + ' minutos e ' + segundos + ' segundos.');
 },1000);
 
 // Novo jogo (refresh page)
 function functionNewgame() {
   location.reload();
+}
+
+function functionGG() {
+  $('#myModal').modal({backdrop: 'static', keyboard: false});
 }
