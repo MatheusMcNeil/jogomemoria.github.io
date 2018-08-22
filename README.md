@@ -12,7 +12,7 @@ O jogo inicia automaticamente quando aberto. Clica em uma carta para revelar seu
 2 estrelas = 9 à 16 jogadas
 1 estrelas = 17 jogadas ou mais
 
-Dependências
+# Dependências
 
 * JQuery
 * Bootstrap
