@@ -1,6 +1,6 @@
 # Jogo da memória
 
-Feito com HTML, CSS, JavaScript, JQuery e Bootstrap.
+Feito com HTML, CSS, JavaScript, JQuery.
 
 # Como jogar
 
@@ -16,3 +16,5 @@ O jogo inicia automaticamente quando aberto. Clica em uma carta para revelar seu
 
 * JQuery
 * Bootstrap
+* Fontawesome
+* Popper.js
